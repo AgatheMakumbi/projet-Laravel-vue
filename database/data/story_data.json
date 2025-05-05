@@ -1,0 +1,103 @@
+{
+    "stories": [
+      {
+        "id": 1,
+        "title": "Camille et la Quête du Lâcher-Prise",
+        "intro": "Camille est une jeune étudiante passionnée par le design d’interface et le développement web. Elle rêve de créer des projets à couper le souffle, dignes des meilleurs portfolios. Mais derrière cette ambition se cache une pression constante : tout doit être parfait. Ce matin-là, elle ouvre Figma. L’écran est vide. Son cœur bat vite. Elle se sent perdue.",
+        "description": "Une étudiante perfectionniste apprend à créer sans pression à travers une aventure interactive.",
+        "created_at": "2025-05-05T00:00:00Z",
+        "updated_at": "2025-05-05T00:00:00Z"
+      }
+    ],
+    "chapters": [
+      {
+        "id": 1,
+        "story_id": 1,
+        "content": "Camille fixe son écran. Le fichier Figma est ouvert, mais reste désespérément blanc.Elle a une idée en tête… mais tout semble flou. Rien ne sort. Son cœur bat plus vite. Elle se sent nulle.",
+        "created_at": "2025-05-05T00:00:00Z",
+        "updated_at": "2025-05-05T00:00:00Z"
+      },
+      {
+        "id": 2,
+        "story_id": 1,
+        "content": "Elle scrolle. Encore. Et encore. Les images sont belles, trop belles. Chaque clic est une fuite déguisée. Une heure passe. Puis deux. Toujours rien dans Figma.",
+        "created_at": "2025-05-05T00:00:00Z",
+        "updated_at": "2025-05-05T00:00:00Z"
+      },
+      {
+        "id": 3,
+        "story_id": 1,
+        "content": "Elle trace un rectangle. Pas droit. Pas terrible. Mais c’est là. Une base. Elle ajoute une couleur. Puis une autre. Ce n’est pas ce qu’elle imaginait… mais ça vit.",
+        "created_at": "2025-05-05T00:00:00Z",
+        "updated_at": "2025-05-05T00:00:00Z"
+      },
+      {
+        "id": 4,
+        "story_id": 1,
+        "content": "Camille ouvre un tuto. Puis un autre. Elle note tout. Elle comprend. Mais oublie aussitôt. Elle veut tout maîtriser. Et n’écrit toujours pas une ligne de code.",
+        "created_at": "2025-05-05T00:00:00Z",
+        "updated_at": "2025-05-05T00:00:00Z"
+      },
+      {
+        "id": 5,
+        "story_id": 1,
+        "content": "Chaque détail compte. Elle ajuste les marges à l’œil près. Elle passe 3 heures sur un seul écran. Mais le reste n’avance pas. Et l’épuisement arrive.",
+        "created_at": "2025-05-05T00:00:00Z",
+        "updated_at": "2025-05-05T00:00:00Z"
+      },
+      {
+        "id": 6,
+        "story_id": 1,
+        "content": "Tout est pensé. Trop pensé. Quand elle commence à coder, elle ne reconnaît plus son plan. Elle efface, recommence. Et se noie dans sa propre logique.",
+        "created_at": "2025-05-05T00:00:00Z",
+        "updated_at": "2025-05-05T00:00:00Z"
+      },
+      {
+        "id": 7,
+        "story_id": 1,
+        "content": "Son amie lui envoie un message : \"Viens à un atelier poterie demain ? Pas besoin de savoir faire, juste t’amuser.\" Camille hésite. Elle…",
+        "created_at": "2025-05-05T00:00:00Z",
+        "updated_at": "2025-05-05T00:00:00Z"
+      },
+      {
+        "id": 8,
+        "story_id": 1,
+        "content": "Camille repousse. Elle continue à tourner en rond. Trop de pression, pas assez de plaisir. Son projet stagne. Encore. Elle est épuisée. Et un jour, elle craque. Elle dit oui pour la poterie.",
+        "created_at": "2025-05-05T00:00:00Z",
+        "updated_at": "2025-05-05T00:00:00Z"
+      },
+      {
+        "id": 9,
+        "story_id": 1,
+        "content": "Le tour de potier tourne. Camille n’y connaît rien. Et c’est parfait. Elle rit, salit ses vêtements, façonne un petit bol tordu. Elle ne cherche pas à réussir. Elle fait. Une semaine plus tard, elle découvre le résultat : un bol imparfait, étrange, magnifique. Elle en est fière. Non pas parce qu’il est beau, mais parce qu’il est libre.",
+        "created_at": "2025-05-05T00:00:00Z",
+        "updated_at": "2025-05-05T00:00:00Z"
+      },
+      {
+        "id": 10,
+        "story_id": 1,
+        "content": "Camille ouvre Figma et commence sans plan. Elle code en testant, en corrigeant, en jouant. Elle accepte de ne pas tout savoir. De rater. Et d’apprendre. Son projet final n’est pas parfait. Mais il est sincère. Vivant. Et surtout : elle a aimé le faire.",
+        "created_at": "2025-05-05T00:00:00Z",
+        "updated_at": "2025-05-05T00:00:00Z"
+      }
+    ],
+    "choices": [
+      { "id": 1, "chapter_id": 1, "label": "Retourner sur Pinterest, encore une fois.", "target_chapter_id": 2 },
+      { "id": 2, "chapter_id": 1, "label": "Essayer de poser une première forme, même imparfaite.", "target_chapter_id": 3 },
+      { "id": 3, "chapter_id": 2, "label": "Lire un tuto UX, peut-être que ça l’aidera…", "target_chapter_id": 4 },
+      { "id": 4, "chapter_id": 2, "label": "Fermer Pinterest et forcer un début.", "target_chapter_id": 3 },
+      { "id": 5, "chapter_id": 3, "label": "Zoomer à 400% pour ajuster les ombres.", "target_chapter_id": 5 },
+      { "id": 6, "chapter_id": 3, "label": "Continuer à avancer, même si c’est bancal.", "target_chapter_id": 7 },
+      { "id": 7, "chapter_id": 4, "label": "Faire un plan complet avant de coder.", "target_chapter_id": 6 },
+      { "id": 8, "chapter_id": 4, "label": "Ouvrir son éditeur et tester directement une idée.", "target_chapter_id": 7 },
+      { "id": 9, "chapter_id": 5, "label": "Abandonner pour aujourd’hui. Tant pis.", "target_chapter_id": 8 },
+      { "id": 10, "chapter_id": 5, "label": "Essayer une autre méthode. Moins rigide.", "target_chapter_id": 7 },
+      { "id": 11, "chapter_id": 6, "label": "Revenir au feeling, au test direct.", "target_chapter_id": 7 },
+      { "id": 12, "chapter_id": 6, "label": "Faire une pause pour prendre du recul.", "target_chapter_id": 8 },
+      { "id": 13, "chapter_id": 7, "label": "Accepte, sans réfléchir.", "target_chapter_id": 9 },
+      { "id": 14, "chapter_id": 7, "label": "Refuse, elle a trop de boulot.", "target_chapter_id": 8 },
+      { "id": 15, "chapter_id": 8, "label": "Direction l’atelier", "target_chapter_id": 9 },
+      { "id": 16, "chapter_id": 9, "label": "Quelque chose a changé...", "target_chapter_id": 10 }
+    ]
+  }
+  
