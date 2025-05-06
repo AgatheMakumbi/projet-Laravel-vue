@@ -17,6 +17,8 @@ class ChapterController extends Controller
     public function getChapter(int $id): JsonResponse
     {
         $chapter = Chapter::with('choices')->findOrFail($id);
+
+        //response()->setStatusCode()//gerer les erreurs ici -> voir HTTP response
         return response()->json($chapter);
     }
 }
