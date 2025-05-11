@@ -2,6 +2,7 @@ import './bootstrap';
 import { createApp } from 'vue';
 import { setDefaultHeaders, setDefaultBaseUrl } from '@/utils/fetchJson.js';
 import App from './App.vue';
+import router from './router';
 
 const csrfToken = document.querySelector('meta[name="csrf-token"]')?.getAttribute('content') ?? '';
 
@@ -10,4 +11,5 @@ const urlApi = document.querySelector('meta[name="api-base-url"]')?.getAttribute
 setDefaultBaseUrl(urlApi);
 
 const myApp = createApp(App);
+myApp.use(router);
 myApp.mount('#app');

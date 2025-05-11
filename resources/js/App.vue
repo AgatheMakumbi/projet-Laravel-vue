@@ -1,14 +1,12 @@
 <script setup>
   import { ref } from 'vue';
-  import StoryLine from '@/pages/StoryLine.vue';
-
-  const n = ref(1);
+  import StoryList from './pages/StoryList.vue';
 </script>
 
 <template>
   <div>
     <main>
-      <StoryLine/>
+      <StoryList/>
       
     </main>
   </div>

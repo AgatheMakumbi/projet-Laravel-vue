@@ -8,7 +8,7 @@ use Illuminate\Http\JsonResponse;
 
 class StoryController extends Controller
 {
-     /**
+    /**
      * Récupère toutes les histoires (id, titre, description).
      *
      * @return JsonResponse
@@ -20,14 +20,19 @@ class StoryController extends Controller
         );
     }
 
-     /**
+    /**
      * Récupère une histoire et ses chapitres associés.
      *
-     * @param int $id
      * @return JsonResponse
      */
-    public function getStoryDetails($id)
+    public function getStoryDetails(): JsonResponse
     {
+        $id = request()->get('id');
+
+        if (!$id) {
+            return response()->json(['error' => 'Missing story ID'], 400);
+        }
+
         $story = Story::with('chapters')->findOrFail($id);
         return response()->json($story);
     }

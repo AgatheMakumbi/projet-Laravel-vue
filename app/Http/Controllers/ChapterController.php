@@ -11,14 +11,17 @@ class ChapterController extends Controller
    /**
      * Récupère un chapitre avec ses choix associés.
      *
-     * @param int $id
      * @return JsonResponse
      */
-    public function getChapter(int $id): JsonResponse
-    {
-        $chapter = Chapter::with('choices')->findOrFail($id);
+    public function getChapter(): JsonResponse
+{
+    $id = request()->get('id');
 
-        //response()->setStatusCode()//gerer les erreurs ici -> voir HTTP response
-        return response()->json($chapter);
+    if (!$id) {
+        return response()->json(['error' => 'Missing chapter ID'], 400);
     }
+
+    $chapter = Chapter::with('choices')->findOrFail($id);
+    return response()->json($chapter);
+}
 }

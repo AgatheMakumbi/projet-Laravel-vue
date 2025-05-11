@@ -14,10 +14,16 @@ class ChoiceController extends Controller
      * @param int $chapterId
      * @return JsonResponse
      */
-    public function getChoicesByChapter(int $chapterId): JsonResponse
+    public function getChoicesByChapter(): JsonResponse
     {
+        $chapterId = request()->get('id');
+    
+        if (!$chapterId) {
+            return response()->json(['error' => 'Missing chapter ID'], 400);
+        }
+    
         $chapter = Chapter::findOrFail($chapterId);
-
+    
         return response()->json(
             $chapter->choices()->select('id', 'label', 'target_chapter_id')->get()
         );

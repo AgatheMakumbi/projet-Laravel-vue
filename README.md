@@ -1,61 +1,87 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# ✨ Camille et la Quête du Lâcher-Prise – Application Laravel + Vue ✨
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## 🎓 WebMobUi – Media Engineering – HEIG-VD 🎓
 
-## About Laravel
+Cette application est une fiction interactive développée dans le cadre du cours WebMobUI.  
+Elle repose sur une architecture fullstack **Laravel (Backend)** et **Vue.js (Frontend)**.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 🧠 De quoi s'agit-il ?
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+Camille est une jeune étudiante passionnée par le design d’interface et le développement web.  
+Elle se met constamment une pression immense pour créer des projets parfaits... jusqu’au jour où elle découvre la poterie, et avec elle, le **lâcher-prise créatif**.
 
-## Learning Laravel
+Ce projet vous propose une **narration interactive**, où les choix du joueur influencent le déroulement de l'histoire.
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Chaque histoire, chapitre et choix est géré dynamiquement via une API REST, et stocké en base de données.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+---
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## ⚙️ Étapes d'installation ⚙️
 
-## Laravel Sponsors
+Voici les étapes pour faire fonctionner le projet localement :
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### 1. Créer un dossier de projet 📁
 
-### Premium Partners
+```bash
+mkdir CamilleNarration
+cd CamilleNarration
+```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development/)**
-- **[Active Logic](https://activelogic.com)**
+### 2. Cloner le dépôt et ajouter votre propre dépôt Git 🔄
 
-## Contributing
+```bash
+# Cloner
+git clone https://github.com/AgatheMakumbi/projet-Laravel-vue.git
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+# Défini ton dépôt comme origine
+git remote set-url origin https://github.com/YourGitHubUsername/YourAppName.git
+```
+### 3. Installer les dépendances 📦
 
-## Code of Conduct
+```bash
+# Frontend
+npm install
+npm run build
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+# Backend
+composer install
+```
+### 4. Configurer l’environnement 📝
 
-## Security Vulnerabilities
+```bash
+cp .env.example .env
+```
+>Ouvre le fichier .env et configure ta base de données (SQLite recommandé pour ce projet).
+Assure-toi que l’URL de base de l’API est définie et que les tokens CSRF sont bien chargés.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### 5. Générer la clé de l’application et exécuter les migrations 🔑
 
-## License
+```bash 
+php artisan key:generate
+php artisan migrate
+php artisan db:seed
+```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### 6. Lancer le serveur de développement ▶️
+
+```bash
+php artisan serve
+```
+
+>Par défaut, l’API est disponible à : http://127.0.0.1:8000/api/v1
+
+Et côté frontend :
+
+```bash
+npm run dev
+```
+
+>L’interface Vue.js est accessible à : http://localhost:5173
+
+Ou pour lancer les deux commandes en une fois
+
+```bash
+composer run dev 
+```
