@@ -15,8 +15,14 @@ class StoryController extends Controller
      */
     public function getStories()
     {
+         $stories = story::all();
+        //Récupérer le chapitre is_start parmi les chapitres associés à chaque livre 
+        foreach ($stories as $story) {
+            $story->chapters = $story->chapters()->where('is_start', true)->first();
+        }
         return response()->json(
-            Story::select('id', 'title', 'description')->get()
+
+            $stories
         );
     }
 
@@ -25,10 +31,8 @@ class StoryController extends Controller
      *
      * @return JsonResponse
      */
-    public function getStoryDetails(): JsonResponse
+    public function getStoryDetails($id)
     {
-        $id = request()->get('id');
-
         if (!$id) {
             return response()->json(['error' => 'Missing story ID'], 400);
         }

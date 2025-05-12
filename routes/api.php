@@ -9,8 +9,10 @@ use App\Http\Controllers\ChapterController;
 //Route::middleware('auth:sanctum')->group(function () {});
 Route::prefix('v1/')->group(function () {
     Route::get('/stories', [StoryController::class, 'getStories']);
-    Route::get('/stories/get', [StoryController::class, 'getStoryDetails']);
-    Route::get('/chapters/get', [ChapterController::class, 'getChapter']);
-    Route::get('/chapters/get/choices', [ChoiceController::class, 'getChoicesByChapter']);
+    Route::get('/stories/{id}', [StoryController::class, 'getStoryDetails']);
+
+    Route::get('/chapters/{id}', [ChapterController::class, 'getChapter']);
+
+    Route::get('/chapters/{id}/choices', [ChoiceController::class, 'getChoicesByChapter']);
 
 });

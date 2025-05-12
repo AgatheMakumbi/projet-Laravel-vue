@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('chapters', function (Blueprint $table) {
             $table->id();
             $table->foreignId('story_id')->constrained()->onDelete('cascade');
+            $table->boolean('is_start')->default(false);
             $table->text('content');
             $table->timestamps();
         });

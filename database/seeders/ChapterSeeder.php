@@ -16,6 +16,7 @@ class ChapterSeeder extends Seeder
         $data = json_decode(file_get_contents(database_path('data/story_data.json')), true);
 
         foreach ($data['chapters'] as $chapterData) {
+            
             Chapter::create($chapterData);
         }
     }

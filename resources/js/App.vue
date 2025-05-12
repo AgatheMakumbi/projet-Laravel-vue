@@ -1,12 +1,16 @@
 <script setup>
   import { ref } from 'vue';
-  import StoryList from './pages/StoryList.vue';
+  import { readMode } from '@/store/story';
+  import StoryList from '@/pages/StoryList.vue';
+  import SingleStory from '@/pages/SingleStory.vue';
+
 </script>
 
 <template>
   <div>
     <main>
-      <StoryList/>
+      <StoryList v-if="!readMode"></StoryList>
+      <SingleStory v-if="readMode"></SingleStory>
       
     </main>
   </div>

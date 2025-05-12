@@ -14,7 +14,7 @@ class ChoiceController extends Controller
      * @param int $chapterId
      * @return JsonResponse
      */
-    public function getChoicesByChapter(): JsonResponse
+    public function getChoicesByChapter($chapterId): JsonResponse
     {
         $chapterId = request()->get('id');
     
@@ -23,7 +23,6 @@ class ChoiceController extends Controller
         }
     
         $chapter = Chapter::findOrFail($chapterId);
-    
         return response()->json(
             $chapter->choices()->select('id', 'label', 'target_chapter_id')->get()
         );

@@ -56,12 +56,40 @@ export function fetchJson(options) {
   if (url.startsWith('http://') || url.startsWith('https://')) {
     fullUrl = url;
   } else {
-    fullUrl = (baseUrl ?? defaultBaseUrl) + (url.startsWith('/') ? url : '/' + url);
+    // Handle API URLs with parameters in the path
+    let apiUrl = (baseUrl ?? defaultBaseUrl) + (url.startsWith('/') ? url : '/' + url);
+    
+    // Handle URL path parameters - replace {id} with actual ID value if provided in data
+    if (data && Object.keys(data).length > 0 && apiUrl.includes('{')) {
+      Object.keys(data).forEach(key => {
+        const placeholder = `{${key}}`;
+        if (apiUrl.includes(placeholder)) {
+          apiUrl = apiUrl.replace(placeholder, data[key]);
+          // Remove used path parameter from data object to avoid it being added to query string
+          delete data[key];
+        }
+      });
+    }
+    
+    fullUrl = apiUrl;
   }
 
-  if (theMethod === 'GET' && data) {
+  // Append ID to URL if it's a GET request and id is in the data
+  if (theMethod === 'GET' && data && data.id && !fullUrl.endsWith(data.id)) {
+    if (fullUrl.endsWith('/')) {
+      fullUrl += data.id;
+    } else {
+      fullUrl += '/' + data.id;
+    }
+    // Remove id from data to avoid it being added to query string
+    const newData = {...data};
+    delete newData.id;
+    data = newData;
+  }
+
+  if (theMethod === 'GET' && data && Object.keys(data).length > 0) {
     const queryString = new URLSearchParams(data).toString();
-    fullUrl += '?' + queryString;
+    fullUrl += (fullUrl.includes('?') ? '&' : '?') + queryString;
   }
 
   const allHeaders = { ...defaultHeaders, ...headers };

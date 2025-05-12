@@ -13,9 +13,9 @@ class ChapterController extends Controller
      *
      * @return JsonResponse
      */
-    public function getChapter(): JsonResponse
+    public function getChapter($id): JsonResponse
 {
-    $id = request()->get('id');
+    
 
     if (!$id) {
         return response()->json(['error' => 'Missing chapter ID'], 400);
